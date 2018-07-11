@@ -18,26 +18,31 @@ class ViewController: UIViewController {
     
     let likeImageView: UIImageView = {
        let likeView = UIImageView(image: #imageLiteral(resourceName: "blue_like"))
+        likeView.contentMode = .scaleAspectFill
         return likeView
     }()
     
     let loveImageView: UIImageView = {
         let loveView = UIImageView(image: #imageLiteral(resourceName: "red_heart"))
-            loveView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+            // loveView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        loveView.contentMode = .scaleAspectFill
         return loveView
     }()
     
     let cryImageView: UIImageView = {
         let cryView = UIImageView(image: #imageLiteral(resourceName: "cry"))
+        cryView.contentMode = .scaleAspectFill
         return cryView
     }()
     
     let laughImageView: UIImageView = {
         let laughView = UIImageView(image: #imageLiteral(resourceName: "cry_laugh"))
+        laughView.contentMode = .scaleAspectFill
         return laughView
     }()
     let suprisedImageView: UIImageView = {
         let surprisedView = UIImageView(image: #imageLiteral(resourceName: "surprised"))
+        surprisedView.contentMode = .scaleAspectFill
         return surprisedView
     }()
     
@@ -47,7 +52,7 @@ class ViewController: UIViewController {
         
         stackedView.distribution = .fillEqually
         stackedView.backgroundColor = .white
-        stackedView.spacing = 2
+        stackedView.spacing = 4
         
         return stackedView
     }()
@@ -56,7 +61,7 @@ class ViewController: UIViewController {
        let iconViews = UIView()
         iconViews.backgroundColor = .white
         iconViews.layer.cornerRadius = 20
-        iconViews.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
+        iconViews.frame = CGRect(x: 0, y: 0, width: 220, height: 40)
         return iconViews
     }()
     
@@ -77,8 +82,8 @@ class ViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         var viewConstraints = [NSLayoutConstraint]()
         
-        let constraint1 = NSLayoutConstraint.constraints(withVisualFormat: "H:|-5-[v0]-5-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": stackView])
-        let constraint2 = NSLayoutConstraint.constraints(withVisualFormat: "V:|-5-[v0]-5-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": stackView])
+        let constraint1 = NSLayoutConstraint.constraints(withVisualFormat: "H:|-8-[v0]-8-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": stackView])
+        let constraint2 = NSLayoutConstraint.constraints(withVisualFormat: "V:|-8-[v0]-8-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": stackView])
         viewConstraints += constraint1
         viewConstraints += constraint2
         NSLayoutConstraint.activate(viewConstraints)
